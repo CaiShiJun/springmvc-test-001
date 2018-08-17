@@ -9,6 +9,7 @@ public class SpringComponentPerson {
     private int id;
     private String name="SpringComponentPersonName";
     private int age = 123;
+
     @Autowired
     private SpringComponentContact springComponentContact;
 
@@ -44,4 +45,13 @@ public class SpringComponentPerson {
         this.springComponentContact = contact;
     }
 
+    @Override
+    public String toString() {
+        return "SpringComponentPerson{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", springComponentContact=" + springComponentContact +
+                '}';
+    }
 }

@@ -50,53 +50,42 @@ public class CustomMethodController {
     public String custom002()throws Exception{
 
         //参数类型为 short ，返回值类型为 byte
-        System.out.println(simpleType(new Short("13")));
+        //System.out.println(simpleType(new Short("13")));
+        //System.out.println(simpleType0802(new Short("13")));
+
         //参数类型为 boolean ，返回值类型为 double
-        System.out.println(simpleType(true));
+        //System.out.println(simpleType(true));
+        //System.out.println(simpleType0802(true));
+
+        //参数类型为 int ，返回值类型为 short
+        //System.out.println(simpleType0802(new Integer(129)));
+
+        //参数类型为 long ，返回值类型为 int
+        System.out.println(simpleType0802(new Long(new Random().nextInt()%12)));
+
         //参数类型为 float ，返回值类型为 long
-        System.out.println(simpleType(23131231.1231321F));
+        //System.out.println(simpleType(23131231.1231321F));
+
         //参数类型为 int ，返回值类型为 char
-        System.out.println(intInCharOut(76));
+        //System.out.println(intInCharOut(76));
+
         //参数类型为 Object，返回值类型为 void
-        objectInVoidOut(new Person());
-        //参数类型为 Class，返回值类型为 Exception 类型
-        classInExceptionOut(this.getClass());
-        //参数类型为Autowired注入的Spring维护的Bean，返回值为Long类型
-        autowiredInLongOut(springComponentBean);
-        //参数类型为Double，返回值类型为Autowired注入的Spring维护的Bean
-        doubleInAutowiredOut(32113212.32131);
-        //多参数多类型测试
-        Random random = new Random();
-        Person person = new Person();
-        person.setId(random.nextInt());
-        person.setAge(25);
-        Contact contact = new Contact();
-        contact.setEmail("caisj@tingyun.com");
-        contact.setPhoneNumber("123123121");
-        contact.setQqNumber("1231231312");
-        person.setContact(contact);
-        manyParamTest(123,person,"manyParamTest_paramStr");
+        //objectInVoidOut(new Person());
+
         return "success";
     }
 
-    //参数类型为 int ，返回值类型为 char
-    public char intInCharOut(int param){
-        System.out.println("public char simpleType(byte param)："+param);
-        return 76;
-    }
 
-    //参数类型为 short ，返回值类型为 byte
-    public byte simpleType(short param){
-        System.out.println("public byte simpleType(short param)："+param);
-        return 12;
-    }
-    public short simpleType(int param){
+    //参数类型为 int ，返回值类型为 short
+    public short simpleType0802(int param){
         System.out.println("public short simpleType(int param)："+param);
         return 123;
     }
-    public int simpleType(long param){
+
+    //参数类型为 long ，返回值类型为 int
+    public int simpleType0802(long param){
         System.out.println("public int simpleType(long param)："+param);
-        return 1234;
+        return 10;
     }
 
     //参数类型为 float ，返回值类型为 long
@@ -116,13 +105,23 @@ public class CustomMethodController {
         System.out.println("public double simpleType(boolean param)："+param);
         return 12345.67;
     }
+
+    //参数类型为 char ，返回值类型为 boolean
     public boolean simpleType(char param){
         System.out.println("public boolean simpleType(char param)："+param);
         return true;
     }
+
+    //参数类型为 byte ，返回值类型为 char
     public char simpleType(byte param){
         System.out.println("public char simpleType(byte param)："+param);
         return 12;
+    }
+
+    //参数类型为 int ，返回值类型为 char
+    public char intInCharOut(int param){
+        System.out.println("public char simpleType(byte param)："+param);
+        return 76;
     }
 
 

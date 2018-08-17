@@ -16,4 +16,11 @@ public class SpringComponentBean {
     public void setSpringComponentPerson(SpringComponentPerson springComponentPerson) {
         this.springComponentPerson = springComponentPerson;
     }
+
+    @Override
+    public String toString() {
+        return "SpringComponentBean{" +
+                "springComponentPerson=" + springComponentPerson +
+                '}';
+    }
 }

@@ -32,4 +32,13 @@ public class SpringComponentContact {
     public void setQqNumber(String qqNumber) {
         this.qqNumber = qqNumber;
     }
+
+    @Override
+    public String toString() {
+        return "SpringComponentContact{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", qqNumber='" + qqNumber + '\'' +
+                '}';
+    }
 }
